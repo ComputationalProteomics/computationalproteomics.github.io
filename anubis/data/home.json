@@ -1,0 +1,41 @@
+{
+	"mainCol": [
+		{
+			"title": "About",
+			"text": "Anubis is a program developed for streamlining the label-free selected reaction monitoring (SRM) workflow, by detecting and quantifying peptides in SRM data, and presenting local false discovery rate (q-value) for each measurement. This is to avoid manual analysis, which is time consuming, subjective and not scalable. <p/>To accurately detect peptides Anubis needs information on the features of a correct peak from each peptide. This information is supplied in a special reference file format and these files can be created using the supplied reference file creator, which uses a transition list and a number of mzML SRM files to generate the reference file. <p/>The Anubis algorithm is not described in detail here, but in short uses pair-wise fragment ratios to detect possible peaks, q-values from a wavelet generated null-distribution to pick the best peak, and correction of suspected interference also by pair-wise fragments. "
+		},
+		{
+			"title": "Source",
+			"text": "The source code is written in scala, with maven as the build tool for each of the programs. Unfortunately the code is mostly undocumented, although test cases exists for the fundamental and most stable part of the code. The program suite is open-source and sub-actively developed (like lizards, we only move when feeling hot)."
+		},
+		{
+			"title": "Citation",
+			"text": "<a href=\"https://doi.org/10.1021/pr300256x\" title=\"https://doi.org/10.1021/pr300256x\">Automated selected reaction monitoring software for accurate label-free protein quantification.</a><br/>Teleman J, Karlsson C, Waldemarson S, Hansson K, James P, Malmström J, Levander F.<br/><i>J Proteome Res 2012</i> Jul 6;11(7):3766-73. doi: 10.1021/pr300256x. Epub 2012 Jun 14<p/>Department of Immunotechnology, Lund University , Lund, Sweden."
+		},
+		{
+			"img": "refCreatorScreenshot.png"
+		}
+	],
+	"sideCol": [
+		{
+			"title": "Downloads",
+                        "text": "Anubis is available for download here or in more recent versions from <a href=\"https://github.com/fickludd/anubis/\" target=\"_blank\">GitHub</a>."
+		},
+		{
+			"file": "anubis-1.4.4.zip",
+			"text": "Anubis and Anubis reference file creator jar-files. Running without arguments will launch the respective GUI. This is a more recent version with bug fixes and mzQuantML support"
+		},
+		{
+			"file": "anubis-1.0.7.zip",
+			"text": "Anubis and Anubis reference file creator jar-files. Running without arguments will launch the respective GUI. This version was used in the paper."
+		},
+		{
+			"file": "anubis-1.0.7-source.zip",
+			"text": "The <a class=\"class1\" href=\"http://www.scala-lang.org\" title=\"http://www.scala-lang.org\">scala</a> source code for Anubis and the associated reference file creator, with <a href=\"http://maven.apache.org\" title=\"http://maven.apache.org\">maven</a> build files. Building requires the <a href=\"http://commons.apache.org/codec\" title=\"http://commons.apache.org/codec\">apache-commons-codec-1.4</a> library and tweaking the build files to point at your installation directories. This version was used in the paper. In most cases we recommend using the latest version from GitHub to facilitate compilation and to benefit from bug fixes. <p/>"
+		},
+		{
+			"title": "Source code",
+			"text": "The source code for Anubis is available at <a href=\"http://github.com/fickludd/anubis/\" target=\"_blank\">http://github.com/fickludd/anubis</a>."
+		}
+	]
+}

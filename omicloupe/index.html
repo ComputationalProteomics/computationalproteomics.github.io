@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmicLoupe</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1a2a3a;
+      line-height: 1.5;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    h1, h2 {
+      color: #0f3554;
+    }
+    .panel {
+      background: #fff;
+      border: 1px solid #dbe3ee;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 0.9rem 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #dbe3ee;
+      border-radius: 8px;
+      background: #fff;
+    }
+    iframe {
+      width: 100%;
+      max-width: 760px;
+      min-height: 430px;
+      border: 0;
+      border-radius: 8px;
+      background: #fff;
+    }
+    a {
+      color: #0a5ea8;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>OmicLoupe</h1>
+
+    <div class="panel">
+      <h2>Introduction</h2>
+      <p>
+        OmicLoupe is a software used for interactive exploration of omics-datasets.
+        It provides an extensive set of visualizations designed to explore quality
+        issues and biological and technical trends rapidly. It also provides
+        visualizations aiming to make it easy to compare how gene products behave
+        across multiple datasets.
+      </p>
+      <p>
+        It was developed at the Department of Immunotechnology by Jakob Willforss,
+        with great input from Valentina Siino and Fredrik Levander.
+      </p>
+      <img src="overview_visualization_small.png" alt="OmicLoupe overview visualization">
+    </div>
+
+    <div class="panel">
+      <h2>Availability</h2>
+      <p>
+        The source code and local installation instructions are available on
+        <a href="https://github.com/ComputationalProteomics/OmicLoupe" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+      <p>
+        An
+        <a href="https://omicloupe.serve.scilifelab.se/" target="_blank" rel="noopener">OmicLoupe web server</a>
+        hosted at SciLifeLab is available.
+        Test data can be downloaded from
+        <a href="https://github.com/ComputationalProteomics/OmicLoupe/releases/download/1.0.0/example_data.zip" target="_blank" rel="noopener">here</a>.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Reference</h2>
+      <p>
+        A manuscript describing the software is published in BMC Bioinformatics
+        <a href="https://doi.org/10.1186/s12859-021-04043-5" target="_blank" rel="noopener">here</a>.
+        Please cite if you use OmicLoupe in your work:
+      </p>
+      <p>
+        Willforss, J., Siino, V. &amp; Levander, F. OmicLoupe: facilitating biological
+        discovery by interactive exploration of multiple omic datasets and statistical
+        comparisons. BMC Bioinformatics 22, 107 (2021).
+        https://doi.org/10.1186/s12859-021-04043-5
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Contact</h2>
+      <p>
+        If you run into issues or have questions, feel free to contact us:
+        jakob (at) jakobwillforss (dot) com or fredrik (dot) levander (at) immun (dot) lth (dot) se.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h2>Tutorial Videos</h2>
+      <p>
+        Video tutorials are available on
+        <a href="https://www.youtube.com/playlist?list=PLUSAOuk3pSE3r5YiGbxUck3Hr4SFeHS1T" target="_blank" rel="noopener">YouTube</a>.
+      </p>
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLUSAOuk3pSE3r5YiGbxUck3Hr4SFeHS1T" allowfullscreen></iframe>
+    </div>
+  </main>
+</body>
+</html>

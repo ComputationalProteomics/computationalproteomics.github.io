@@ -1,0 +1,23 @@
+{
+	"title": "SRM QC",
+	"subtitle": "A tool for keeping track of SRM instrument performance",
+	"img": "frag_logo.png",
+	"pages": [
+		{
+			"name": "home",
+			"desc": "home of the page"
+		},
+		{
+			"name": "classic",
+			"desc": "classic QCHtmlSummary tool"
+		},
+		{
+			"name": "qc2",
+			"desc": "revised qc workflow based on lessons from the classic"
+		},
+		{
+			"name": "pipelib",
+			"desc": "Minimal python library for msconvert / anubis analysis and shuffling files around"
+		}
+	]
+}

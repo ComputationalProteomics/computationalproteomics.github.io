@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	
+	<title>FEvER: Functional Evaluation of Expression Regulation</title><style type="text/css" title="currentStyle" media="screen">
+		@import "style.css";
+	</style>
+	<link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico" />	
+	<link href='http://fonts.googleapis.com/css?family=Habibi&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+</head>
+<body id="body">
+
+	<div id="container">
+
+	<div id="intro">
+		<div id="pageHeader">
+			<span></span>
+		</div>
+
+		<div id="navBar">
+			<ul>
+				<li><a href="index-2.html" title="start">home</a></li>
+				<li><a href="method.html" title="The workflow and models used">method</a></li>
+				<li><a href="howto.html" title="details of the system, instructions for a sample run">how-to</a></li>
+				<li><a href="download.html" title="the listing of available downloads">download</a></li>
+				<li><a href="dev.html" title="a (speculative) roadmap of expected development">Development</a></li>
+			</ul>
+		</div> 
+
+		<div id="preamble">
+			<p class="p1"><span>A systematic and thorough method for identifying the significant links in biochemical pathways with high sensitivity.</span></p>
+		</div>
+	</div>
+
+	<div id="supportingText">
+		<div id="explanation">
+
+			<h3><span>What is FEvER?</span></h3>
+			<p class="p1"><span>FEvER stands for Functional Evaluation of Expression Regulation. More explicitly put, FEvER is a method of systematically deducting functional information from differential quantitative proteomics datasets.</span></p>
+
+			<p class="p2"><span>Based on a M.Sc. thesis project by Ufuk Kirik at Department of Immunology at Lund University, FEvER method is developed to provide a robust tool to proteomics researchers for linking regulation of genes or proteins to functional analysis. The primary goal of the method is to facilitate identification of biomolecular networks associated with different conditions.</span></p>
+
+			<h3><span>What does FEvER do?</span></h3>
+			<p class="p1"><span>Modern data analysis workflows within omics quite cover many steps, varying from various types of signal processing to management of extensive amounts of data. Within this perspective, FEvER method is aimed to for the last steps of the analysis, during investigation of functional implications of the experiment in question. The method has been implemented using Java programming lanaguage, which is <a href="download.html" title="the listing of available downloads">freely available</a>.</span></p>
+
+			<p class="p2"><span>Starting with a dataset with proteins, or genes, given with experimental values such as relative abundances given as ratios and p-values denoting the variability of these ratios, FEvER takes the following steps:
+				<ol>
+					<li>parse the data and allocate analytes into user-defined regions</li>
+					<li>query public databases for pathways that these proteins are involved in</li>
+					<li>evaluate the acquired pathways based on two complementary enrichment models</li>
+					<li>present the results using user-friendly and interactive reports.</li>
+				</ol>
+			</span>
+			</p>
+
+			<p class="p3"><span>For more information on the specifics of the methods used or the mathematical model applied check out the <a href="method.html" title="The workflow and models used">method</a> page.</span></p>
+
+			<h3><span>Who is behind FEvER?</span></h3>
+			<p class="p1"><span>Development of the FEvER method including the homepage was done by <i>Ufuk Kirik</i>, under the supervision of <i>Fredrik Levander</i> at Department of Immunotechnology, Lund University. </span></p>
+
+			<p class="p2"><span>For specific questions on the method or the software implementation presented here, please contact via <a href="mailto:ufuk.kirik_at_immun.lth.se">e-mail</a>. <b>Make sure you replace the characters wrapped with underscore to appropriate punctuation.</b></span></p> 
+			
+			<p class="p3"><span>We would also like to acknowledge all the help we have received during the development. Many thanks to colleagues in Dept. of Immunotechnology,  <i>Benjamin Gross</i> and colleagues within the Pathway Commons project; the BioPAX community and mail group; lastly but not least <i>Ozgun Babur</i> and colleagues at BCBI, Bilkent University for their help on integration of the pathway visualization software <a href="http://www.bilkent.edu.tr/~bcbi/chibe.html" target="_blank" title="Chisio BioPAX Editor">ChiBE</a>.</span></p> 
+			
+			<h3><span>Citation</span></h3>
+			<p>Kirik U, Cifani P, Albrekt AS, Lindstedt M, Heyden M, Levander F (2012)  Multi-model pathway enrichment methods for functional evaluation of expression regulation (FEvER) <a href="http://dx.doi.org/10.1021/pr300038b"><i>J Proteome Res.</i> DOI: 10.1021/pr300038b</a></p>
+			
+		</div>
+
+	</div>
+
+
+	<div id="footer">
+		<p>
+			<span><b>Links:</b> &nbsp;&nbsp;&nbsp;</span>
+			<a href="http://www.immun.lth.se/" target="_blank" title="Department of Immunotechnology, Lund University">Dept. Immunotechnology</a> &nbsp; 
+			<a href="http://www.pathwaycommons.org/pc/" target="_blank" title="Pathway Commons Database">Pathway Commons</a> &nbsp; 
+			<a href="http://www.uniprot.org/" target="_blank" title="UniProt Protein Database">Uniprot</a> &nbsp;
+			<a href="http://www.kegg.jp/kegg/kegg2.html" target="_blank" title="Kyoto Encyclopedia of Genes and Genomes">Kegg</a> &nbsp;
+		</p>
+		<SCRIPT type="text/javascript"> 
+			document.write('<p style=\"text-transform:capitalize;font-size:0.85em;\">');
+				document.write ('Last updated: ', new Date(document.lastModified).toLocaleString());
+				document.write('</p>');
+		</SCRIPT> 
+	</div>
+
+
+</div>
+
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<div id="extraDiv1"><span></span></div>
+<div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
+</body>
+</html>

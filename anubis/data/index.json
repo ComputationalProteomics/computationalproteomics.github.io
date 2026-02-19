@@ -1,0 +1,11 @@
+{
+	"title": "Anubis",
+	"subtitle": "A software for automated peptide detection and quantification in SRM data",
+	"img": "Anubis_logo.png",
+	"pages": [
+		{
+			"name": "home",
+			"desc": "home of the page"
+		}
+	]
+}

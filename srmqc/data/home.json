@@ -1,0 +1,27 @@
+{
+	"mainCol": [
+		{
+			"title": "About",
+			"text": "In the field of proteomics research, selective reaction monitoring (SRM) is a up and coming technology for reproducible, specific and sensitive measurement of biological samples. The technique relies on mass spectrometry, and to ensure reproducible analysis, the mass spectrometer needs to perform stably. The qc tool available here is aimed at tracking system performance over time, in order to allow researchers to monitor their SRM setup efficiently. The tool processes output from the Anubis SRM analysis software (<a href=\"http://pubs.acs.org/doi/abs/10.1021/pr300256x\"/>pubmed</a>, <a href=\"http://quantitativeproteomics.org/anubis\">homepage</a>) and generates a web page with key figures and graphs. The tool is described in the manuscript cited below. The raw data used in the manuscript is also available for download here. "
+		},
+		{
+			"title": "Source",
+			"text": "The source code for the tools is written in <a class=\"class1\" href=\"http://www.scala-lang.org\" title=\"http://www.scala-lang.org\">scala</a>, with <a href=\"http://maven.apache.org\" title=\"http://maven.apache.org\">maven</a> as the build tool. Unfortunately the code is mostly undocumented, although test cases exists for the fundamental and most stable part of the code. We have chosen not to provide access to our revision tree of the source, since it is quite robust and stable, and we do not have the resources to provide support and feedback in a greater extent. "
+		},
+		{
+			"title": "Classic vs. qc2",
+			"text": "Since the initial conception of the qc report tool for SRM, we have learned enough to devise a new and more purposeful version. This was not started when we wrote the manuscript, but is still provided as an alternative to researchers who'd like to try our our work. We use the later version with great success."
+		},
+		{
+			"title": "Citation",
+			"text": "<a href=\"http://www.sciencedirect.com/science/article/pii/S1874391913001760/\">Automated quality control system for LC-SRM setups</a><br/>Teleman J, Waldemarson S, Malmström J, Levander F.<br />Journal of Proteomics (2013) 95:77-83<br/><a href=\"http://dx.doi.org/10.1016/j.jprot.2013.03.029\">doi:10.1016/j.jprot.2013.03.029</a>"
+		}
+	],
+	"sideCol": [
+		{
+			"title": "Downloads",
+			"file": "QC_6mix_halfyear_johant.zip",
+			"text": "Research data associated with the initial publication, also used for generating the sample reports for the two version of the tool. "
+		}
+	]
+}

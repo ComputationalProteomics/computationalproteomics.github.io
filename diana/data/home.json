@@ -1,0 +1,38 @@
+{
+	"mainCol": [
+		{
+			"title": "About",
+			"text": "Diana is a set of algorithms and tools intended for analysis of data independent acquisition mass spectrometry (DIA-MS) data, using a targeted extraction strategy. Taking concepts from our previous work on <a href=\"http://quantitativeproteomics.org/anubis\">SRM data analysis</a>, Diana has been shown to be specially suited for analysis and accurate quantification of target peptides in complex backgrounds."
+		},
+		{
+			"title": "Source",
+			"text": "DIANA is implemented in scala 2.10 and python 2.7.3 and available as open source (Apache 2.0 license), as well as pre-compiled binaries from http://github.com/flevander/diana. PyProphet is installable through PyPi (https://pypi.python.org/pypi/pyprophet/0.9.1) or available as open source https://github.com/fickludd/pyprophet."
+		},
+		{
+			"title": "Citation",
+			"text": "DIANA - algorithmic improvements for analysis of complex peptide sample data-independent acquisition MS data<br/>Johan Teleman, Hannes Röst, George Rosenberger, Uwe Schmitt, Lars Malmström, Johan Malmström and Fredrik Levander<br/>Bioinformatics (2014) <a href=\"http://dx.doi.org/10.1093/bioinformatics/btu686\">doi:10.1093/bioinformatics/btu686</a>"
+		}
+	],
+	"sideCol": [
+		{
+			"title": "Downloads",
+			"text": "The latest binaries are available at <tt>http://github.com/flevander/diana</tt>. "
+		},
+		{
+			"file": "diana-1.0.0.zip",
+			"text": "Diana tools and pipeline scripts, as used in the original manuscript."
+		},
+		{
+			"file": "diana-source-1.0.0.zip",
+			"text": "Source code archive of Diana tools and scripts, as used in the original manuscript."
+		},
+		{
+                        "file": "diana-tutorial.zip",
+                        "text": "Minimal tutorial to help the new user getting started, and to test a new DIANA installation."
+                },
+		{
+			"title": "Source code",
+			"text": "The latest source code and binaries for Diana are available at <a href=\"http://github.com/flevander/diana\" target=\"_blank\">http://github.com/flevander/diana</a>."
+		}
+	]
+}

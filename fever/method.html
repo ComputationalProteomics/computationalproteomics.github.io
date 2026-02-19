@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		
+		<title>FEvER: Functional Evaluation of Expression Regulation</title><style type="text/css" title="currentStyle" media="screen">
+			@import "style.css";
+		</style>
+		<link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico" />	
+		<link href='http://fonts.googleapis.com/css?family=Habibi&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+			
+		</head>
+		<body id="body">
+			
+			<div id="container">
+				<div id="intro">
+					<div id="pageHeader">
+						<span></span>
+					</div>
+					
+					<div id="navBar">
+						<ul>
+							<li><a href="index-2.html" title="start">home</a></li>
+							<li><a href="method.html" title="the workflow and models used">method</a></li>
+							<li><a href="howto.html" title="details of the system, instructions for a sample run">how-to</a></li>
+							<li><a href="download.html" title="the listing of available downloads">download</a></li>
+							<li><a href="dev.html" title="a (speculative) roadmap of expected development">Development</a></li>
+							</ul>
+						</div> 
+						
+						<div id="preamble">
+							<p class="p1"><span>A systematic and thorough method for identifying the significant links in biochemical pathways with high sensitivity.</span></p>
+						</div>
+	</div>
+
+	<div id="supportingText">
+		<div id="explanation">
+			<h3><span>The FEvER workflow</span></h3>
+			<p class="p1">
+				<!--
+				<img src="images/fever_workflow.png" alt="FEvER workflow" align="right"/> 
+				-->
+				<span>The FEvER computational method is built around two main models for pathway enrichment; one based on a parametric evaluation of proteins that are involved in pathways, and the other based on non-parametric assessment of over-represented pathways based on differential expression data, see workflow figure. </span></p>
+
+			<p class="p2">
+				<span>
+					Prior to pathway evaluation the software manages data handling tasks such as parsing experimental data, dealing with multiple identity problem for protein accessions and querying of pathway associations. Pathways are evaluated using the two models in parallel, and in order to increase efficacy of the analysis as well as to decrease the overall process-time, our implementation utilizes multithreading making use of the modern multi-core microprocessors.
+				</span>
+			</p>
+
+			<h3><span>Regulation evaluation</span></h3>
+			<p class="p3">
+				<span>Despite their central role in the functioning of an organism, analysis of pathways is highly speculative in the sense that pathways are abstract and human-defined. Moreover, unlike proteins, experimental evaluation of pathways is often not possible. In FEvER analysis regulation evaluation of pathways is done using two enrichment models based on the observed proteins.
+				</span>
+			</p>
+
+			<p class="p4">
+				<span>The first model is a novel parametric assessment of the observed expression regulation of the proteins within a pathway. Simply put, using a series of parameters defined by the user, the model evaluates an enrichment score, and then evaluates the significance of this score by a Monte Carlo approach.</span>
+			</p>
+			
+			<p class="p5">
+				<span>The second enrichment model is a well-known non-parametric evaluation of pathway over-representation. This type of analysis has been explained in literature in multiple different studies, and exists in many different flavors, particularly within microarray data analysis (see <i>Subramanian et al</i> PNAS 102(43) and <i>Backes et al</i> Nucl. Acids Res. (2007) 35). The non-parametric model calculates to what extent proteins in of a particular pathway are clustered on a fold change scale containing all proteins in the dataset, and evaluates the significance of observing the that particular outcome.</span>
+			</p>
+			
+			<p class="p6">
+				<span>Further information on the algorithms and formulas are explained in a manuscript in review (Kirik et al submitted).</span>
+			</p> 
+			
+			<p class="p7"><span>See <a href="howto.html" title="details of the system, instructions for a sample run">how-to</a> page, for a quick guide to how you can use FEvER in your analyses today.</span></p>
+
+		</div>
+		
+
+	</div>
+
+	<div id="footer">
+		<p>
+			<span><b>Links:</b> &nbsp;&nbsp;&nbsp;</span>
+			<a href="http://www.immun.lth.se/" target="_blank" title="Department of Immunotechnology, Lund University">Dept. Immunotechnology</a> &nbsp; 
+			<a href="http://www.pathwaycommons.org/pc/" target="_blank" title="Pathway Commons Database">Pathway Commons</a> &nbsp; 
+			<a href="http://www.uniprot.org/" target="_blank" title="UniProt Protein Database">Uniprot</a> &nbsp;
+			<a href="http://www.kegg.jp/kegg/kegg2.html" target="_blank" title="Kyoto Encyclopedia of Genes and Genomes">Kegg</a> &nbsp;
+		</p>
+			<SCRIPT type="text/javascript"> 
+				document.write('<p style=\"text-transform:capitalize;font-size:0.85em;\">');
+				document.write ('Last updated: ', new Date(document.lastModified).toLocaleString());
+				document.write('</p>');
+			</SCRIPT> 
+	</div>
+
+
+</div>
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<div id="extraDiv1"><span></span></div>
+<div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+</body>
+</html>

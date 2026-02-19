@@ -1,0 +1,47 @@
+{
+	"mainCol": [
+		{
+			"title": "Requirements",
+			"text": "To set up the classic SRM QC pipeline you need the following:<ul><li>QCReport tool, downloaded here</li><li><a href=\"https://www.quantitativeproteomics.org/anubis\">Anubis</a> version 1.1.4+</li><li>Proteowizard <a href=\"http://proteowizard.sourceforge.net/downloads.shtml\">msconvert</a> tool (w. appropriate vendor libraries)</li><li>either pipelib or other scripting method</li><li>preferrably some computer apart from the instrument computer</li></ul>"
+		},
+		{
+			"title": "Installation",
+			"text": "Installation is very similar to the classic version except for a few details."
+		},
+		{
+			"title": "1) Anubis reference file, qc-report expected values",
+			"text": "<ul><li>Using anubis reference creator and a successful QC-injection, create a anubis reference file.</li><li>make a copy of this file and put it in C:\\pipe on the server</li><li>Select a number of successful QC-injections and copy them to a separate folder</li><li>Convert the QC-injections to mzML using msconvert and analyze with anubis and the reference file from before.</li><li>run QCReport with '--output-type=stat' on these anubis-result to generate a expectation file for QCReport</li><li>copy this new .json file to C:\\srm_qc_report\\data on the server.</li></ul>"
+		},
+		{
+			"title": "2) Copy files from instrument computer",
+			"text": "<ul><li>Install python on the instrument computer</li><li>extract pipelib.zip to C:\\pipe</li><li>create a dedicated folder for QC-injections that are supposed to be seen in the report, for example C:\\Xcalibur\\data\\QC</li><li>Ensure you have mounted a folder on the server where you want to keep you QC report</li><li>open C:\\pipe\\qcCopyRaw.conf</li><li>change the 'LOCAL_DATA_DIR' to your new dedicated QC-injection folder</li><li>Change 'REMOTE_DATA_DIR' to the server QC-injection folder</li><li>open Scheduled Tasks (in the control panel) and create a new scheduled task.</li><li>instruct the task to run python.exe, daily, and provide your credentials.</li><li>finish creating the new scheduled task.</li><li>right click the new task and select properties..</li><li>in the 'run' box, type 'C:\\path\\to\\python.exe qcCopyRaw.py qcCopyRaw.conf'</li><li>in the 'Start in' box, type 'C:\\pipe'</li><li>in the 'Schedule' tab, click advanced and tell the task to run every 5 minutes.</li></ul><p/> Now the instrument computer will look for new .raw files in the dedicated QC-injection folder every 5 minutes, and copy those to the serverside QC report folder."
+		},
+		{
+			"title": "3) Setup server",
+			"text": "<ul><li>Install python on the server</li><li>extract pipelib.zip to C:\\pipe</li><li>Install msconvert</li><li>Put anubis.jar and QCReport.jar in C:\\pipe, and modify C:\\pipe\\qcCompile.conf so 'ANUBIS_JAR' and 'QC_CLASSIC_JAR' point to these files</li><li>still in C:\\pipe\\qcCompile.conf, change 'QC_DIR' to point at your serverside QC-injections folder</li><li>change 'MSCONVERT_PATH' to where you have installed msconvert.exe</li><li>analogous to before, create a Scheduled Task that runs 'C:\\path\\to\\python.exe qcCompile.py qcCompile.conf' every 5 minutes in the C:\\pipe folder</li></ul><p/> Now the server will convert new .raw files to mzML and analyze them with anubis. These results are then combined into the QC-report and stored in C:\\srm_qc_report. This location can be changed in the qcCompile.conf file."
+		},
+		{
+			"title": "Troubleshooting",
+			"text": "If you are using pipelib, the C:\\pipe\\qcCopyRaw.log on the instrument computer, and C:\\pipe\\qcCompile.log on the server provide logs of what the scripts are doing, and here you can sometimes find the cause for pipeline failure. Remember to ensure that your installations are working by running msconvert and python from the commandline manually.<p/> If files are copied prematurely to the server, try increasing the second-counts on line 32 in copy.py on the instrument computer. Essentially the second one should be at least 5 min longer than the time of one QC-injection."
+		},
+		{
+			"title": "Heeeelp!",
+			"text": "If you really want this to work, but it still doesn't - feel free to mail me (Johan) and I will do my best to help you."
+		}
+	],
+	"sideCol": [
+		{
+			"title": "Downloads",
+			"file": "qcreport-0.9.2.jar",
+			"text": "version 0.9.2 of the qc2 commandline tool that summarises anubis results into a webpage report."
+		},
+		{
+			"file": "qcreport-0.9.2-source.zip",
+			"text": "scala source files for version 0.9.2 of the QCReport tool."
+		},
+		{
+			"title": "Sample report",
+			"text": "<a href=\"sample/qc2/index.html\" title=\"QCReport sample\">QCReport sample</a><p/>sample of a summary tool report for 407 consecutive QC runs."
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"title": "Diana",
+	"subtitle": "algorithm and software tools for DIA-MS data analysis",
+	"img": "DIANA_logo.png",
+	"pages": [
+		{
+			"name": "home",
+			"desc": "home of the page"
+		},
+		{
+                        "name": "quick-start",
+                        "desc": "instruction on how to get started"
+                }
+	]
+}

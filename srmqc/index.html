@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<meta charset="utf-8">
+<head>
+	<title>SRM QC - A tool for keeping track of SRM instrument performance</title>
+	<style type="text/css" title="currentStyle" media="screen">
+		@import "style.css";
+	</style>
+	<script src="../assets/js/d3.v3.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var page = "home";
+		var pages = [];
+		var releaseBase = "https://github.com/ComputationalProteomics/computationalproteomics.github.io/releases/download/";
+		var releaseTag = "srmqc-assets";
+		var releaseFiles = {
+			"pipelib.zip": releaseBase + releaseTag + "/pipelib.zip",
+			"QC_6mix_halfyear_johant.zip": releaseBase + releaseTag + "/QC_6mix_halfyear_johant.zip",
+			"QCHtmlSummary-0.9.5.jar": releaseBase + releaseTag + "/QCHtmlSummary-0.9.5.jar",
+			"QCHtmlSummary-0.9.5-source.zip": releaseBase + releaseTag + "/QCHtmlSummary-0.9.5-source.zip",
+			"qcreport-0.9.2.jar": releaseBase + releaseTag + "/qcreport-0.9.2.jar",
+			"qcreport-0.9.2-source.zip": releaseBase + releaseTag + "/qcreport-0.9.2-source.zip"
+		};
+		var fullPage = d3.select("body").append("div")
+			.attr("id", "fullPage");
+
+		var header = fullPage.append("div")
+    		.attr("id", "header");
+
+		var content = fullPage.append("div")
+			.attr("id", "content");
+
+		var footer = fullPage.append("div")
+			.attr("id", "footer");
+
+
+		var titles = header.append("div");
+		var title = titles.append("div")
+			.attr("id", "title");
+		var subtitle = titles.append("div")
+			.attr("id", "subtitle");
+    	var navBar = header.append("div")
+    		.attr("id", "navBar");
+
+		var mainCol = content.append("div")
+			.attr("id", "mainCol");
+
+		var sideCol = content.append("div")
+			.attr("id", "sideCol");
+
+		function resolveFileHref(fileName) {
+			if (releaseFiles[fileName]) {
+				return releaseFiles[fileName];
+			}
+			return "files/" + fileName;
+		}
+
+		function loadPage(page) {
+			if (page != "") {
+				d3.json("data/"+page+".json", function(error, data) {
+					var mains = mainCol.selectAll("div")
+			    		.data(data.mainCol)
+			    	  .enter().append("div")
+			    	  	.attr("class", "item");
+
+			    	mains.append("h2")
+			    	  	.text(function(d) { return d.title; });
+			    	mains.filter(function(d) { return d.img != null; })
+			    		.append("img")
+			    		.attr("src", function(d) { return "img/"+d.img; })
+			    		.text(function(d) { return d.img; });
+			    	mains.append("p")
+			    	  	.html(function(d) { return d.text; });
+
+
+					var sides = sideCol.selectAll("div")
+			    		.data(data.sideCol)
+			    	  .enter().append("div")
+			    	  	.attr("class", "item");
+
+			    	sides.append("h2")
+			    	  	.text(function(d) { return d.title; });
+			    	sides.filter(function(d) { return d.file != ""; })
+			    		.append("a")
+			    		.attr("href", function(d) { return resolveFileHref(d.file); })
+			    		.text(function(d) { return d.file; });
+			    	sides.append("p")
+			    	  	.html(function(d) { return d.text; });
+				});
+			}
+		}
+
+		var query = window.location.search.replace("?", "").split("&");
+		for (var i=0; i<query.length; i++) {
+			var t = query[i].split("=");
+			if (t[0] == "page")
+				page = t[1];
+		}
+		loadPage(page);
+
+		d3.json("data/index.json", function(error, data) {
+			title.text(data.title)
+			subtitle.text(data.subtitle)
+			header.style("background-image", "url('img/"+data.img+"')")
+			pages = data.pages;
+
+			navBar.append("ul").selectAll("li")
+	    		.data(pages)
+	    	  .enter().append("li")
+	    	  	.append("a")
+	    	  		.style("width", (800 / pages.length - 12)+"px")
+		    	  	.text(function(d) { return d.name; })
+		    	  	.attr("href", function(d) { return "index.html?page="+d.name; })
+		    	  	.attr("title", function(d) { return d.desc; });
+
+		});
+
+
+
+
+		d3.json("data/contacts.json", function(error, data) {
+			var contacts = footer.append("table").append("tr").selectAll("td")
+	    		.data(data.contacts)
+	    	  .enter().append("td")
+	    	  	.attr("class", "contact");
+	    	
+	    	contacts.append("p").text(function(d) { return d.fullName; });
+	    	contacts.append("p").text(function(d) { return d.title; });
+	    	contacts.filter(function(d) { return d.email != null && d.email !== ""; })
+	    		.append("p").text(function(d) { return d.email; });
+		});
+	</script>
+</body>
+</html>

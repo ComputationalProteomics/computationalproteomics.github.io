@@ -1,0 +1,160 @@
+/* Stylesheet for FEvER test results */
+@charset "utf-8";
+body { 
+margin: 0px; padding: 0px; border: 0px; 
+font-family: 'Habibi',Georgia, "Times New Roman", Times, serif;
+font-size: 0.8em;
+background-image: url('images/body_bg.png');
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position:82% 100%;
+}
+
+#leftcol{
+width: 464px; 
+height: 701px;
+left:50%;
+margin-left:0px;  
+padding: 0;
+background: url('images/left.png') no-repeat left bottom;
+}
+
+#container {
+width: 800px; 
+margin: 0px; /* top right bottom left */ 
+padding: 0;
+position:absolute;
+left:50%;
+margin-left:-400px; 
+}
+
+#container #preamble{
+font-size:1.1em;
+font-style:italic;
+height:100px;
+}
+
+#container #pageHeader{ 
+margin: 0; padding: 0; width: 70%; height: 100px; 
+background-image: url('images/banner.png');
+background-repeat: no-repeat;
+  float: left; }
+
+/*  NAVBAR RELATED STYLING  */
+#container #navBar {
+padding:1em 0 1em 0; 
+width: 100%; 
+height:2em; 
+float: left;
+text-transform:uppercase; 
+font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+font-size:1em;
+font-weight:bolder;
+}
+
+#container #navBar ul{margin:0px; padding:0px; list-style: none; line-height: normal;}
+#container #navBar ul li {float: left; }
+#container #navBar ul li a {
+background: url(images/button-bg.png) #fff bottom left repeat-x;
+padding:0 1em;
+float: left;
+display: block;
+text-decoration: none;
+text-align: center;
+font-weight: bold;
+font-size: 0.8em;
+line-height:1.75em;
+color: #b00;
+border: 0.05em solid #ffdce9;
+}
+
+#container #navBar ul li a:hover {
+background: url('images/button-hover-bg.png') #fff top left repeat-x;
+padding:0 1em;
+float: left;
+display: block;
+text-decoration: none;
+text-align: center;
+font-weight: bold;
+font-size: 0.8em;
+line-height:1.75em;
+color: #fff;
+border: 0.05em solid #ffdce9;
+
+}
+
+#container #footer {
+width: 100%; 
+border-top: #902020 solid 1px; 
+margin-top:30px;
+}
+
+a {
+color: #902020;
+}
+
+/*  HEADINGS RELATED STYLING  */
+h1 {
+padding-top: 200px;
+padding-right: 90px;
+text-align: right;
+font-size: 1.6em;
+font-style: italic;
+color: #FFFFFF;
+}
+
+h2 {
+padding-right: 90px;
+text-align: right;
+font-size: 1em;
+font-style: italic;
+color: #EAEEF7;
+}
+
+
+h3 {
+padding-top: 7px;
+padding-bottom:0px;
+font-style: italic;
+color: #902020;
+font-size: 1.2em;
+}
+
+h4 {
+margin-top: 20px;
+margin-left: 30px;
+margin-bottom: 10px;	
+}
+
+#codebox{
+background:#ffe0e0;
+border:2px solid #902020;
+padding:5px 10px 5px 50px;
+color:#000000;
+}
+
+#tabledef{
+font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+width:100%;
+border-collapse:collapse;
+}
+
+#tabledef td, #tabledef th {
+font-size:0.9em;
+border:1px solid #902020;
+padding:0.5em;
+}
+
+#tabledef th {
+font-size:1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#902020;
+color:#fff;
+}
+
+#tabledef tr.alt td {
+color:#000;
+background-color:#ffe0e0;
+}

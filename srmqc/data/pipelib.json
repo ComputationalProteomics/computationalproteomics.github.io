@@ -1,0 +1,19 @@
+{
+	"mainCol": [
+		{
+			"title": "About",
+			"text": "This is a minimal python library for scheduling msconvert, anubis and QCReport. These need to be installed separately. Included are also two utility python programs for copying files and creating a QC-report.<p/>The library features script configuration and log handling, and all functions keep logging what they are doing and when things to wrong. Logging is based on the standard python library Logger, and the log level is therefore configurable. <p/>Configuration is handled through a separate configuration file, based on a very simple 'name: value' schema."
+		},
+		{
+			"title": "Requirements",
+			"text": "Apart from the tools of interest (Proteowizards msconvert, anubis and QCReport / QCHtmlSummary), only <a href=\"http://www.python.org/download/\">python 2.6+</a> is needed."
+		}
+	],
+	"sideCol": [
+		{
+			"title": "Downloads",
+			"file": "pipelib.zip",
+			"text": "The pipelib python library."
+		}
+	]
+}

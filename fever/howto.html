@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		
+		<title>FEvER: Functional Evaluation of Expression Regulation</title><style type="text/css" title="currentStyle" media="screen">
+			@import "style.css";
+		</style>
+		<link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico" />	
+		<link href='http://fonts.googleapis.com/css?family=Habibi&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+			
+		</head>
+		<body id="body">
+			
+			<div id="container">
+				<div id="intro">
+					<div id="pageHeader">
+						<span></span>
+					</div>
+					
+					<div id="navBar">
+						<ul>
+							<li><a href="index-2.html" title="start">home</a></li>
+							<li><a href="method.html" title="the workflow and models used">method</a></li>
+							<li><a href="howto.html" title="details of the system, instructions for a sample run">how-to</a></li>
+							<li><a href="download.html" title="the listing of available downloads">download</a></li>
+							<li><a href="dev.html" title="a (speculative) roadmap of expected development">Development</a></li>
+						</ul>
+					</div> 
+					
+					<div id="preamble">
+						<p class="p1"><span>A systematic and thorough method for identifying the significant links in biochemical pathways with high sensitivity.</span></p>
+					</div>
+	</div>
+
+	<div id="supportingText">
+		<div id="explanation">
+			<h3><span><a name="io">Data management</a></span></h3>
+			<p class="p1">
+				<span>
+					FEvER software requires that the input dataset is a list of accessions (only UniProt accessions are supported right now) together with relative abundance ratios and p-values for these ratios, calculated from replicates. The input datafile can be either tab-separated text based or Microsoft Excel files, with or without a header row. In case there is a header row the software will attempt to parse the columns right, however if it fails it will assume that the first three columns of the file are accessions, ratios and p-values, respectively. For frequent users of the software <a href="http://www.biochem.mpg.de/en/rd/maxquant/" target="_blank">MaxQuant</a>, simply importing the resulting text file into Microsoft Excel should be enough.
+				</span>
+			</p>
+			
+			<p class="p2">
+				<span>
+					For several different system files, FEvER software will use a system directory which will be created the first time the software is run. It is strongly recommended to note where this directory is created and re-use the files there, as this will improve the performance of the software dramatically. To minimize the idle time during web queries, FEvER caches results of previous queries. These are stored in a particular format (*.fsf) within the system directory, and updated when the relevant databases are updated. 
+				</span>
+			</p>
+
+			<h3><span><a name="params">Parameters</a></span></h3>
+				<p class="p3">
+					<span>The first two parameters are used to define the paths to the input file, and where the output should be saved, respectively. The next two parameters, <code>SIG</code> and <code>REG</code>, are used to define threshold values for what constitutes an interesting, or significantly regulated, protein in the in the experimental data. The last parameter in this portion of the parameter file is where the accession types for proteins in the input file is given. Currently only UniProt and IPI accessions are supported by the software, however future releases will add further support for different databases.  
+				</span>
+			</p>
+
+			<div id="codebox">
+<pre>
+INPUT - path to the input file
+HEADERROW - flag whether or not the input file has a header row
+SEPCHAR - the character used to separate multiple identities from one another
+OUTPUT - path to an output folder (optional)
+SYSDIR - path to the FEvER system folder
+ID - the type of accessions in the datafile (UniProt is expected)
+SIG - ROI threshold value for p-values (default value = 0.05)
+REG - ROI threshold for absolute fold change (default value = 2)
+ALPHA1 - alpha1 coefficient (default value = 0.75)
+ALPHA2 - alpha2 coefficient (default value = 0.15)
+ALPHA3 - alpha3 coefficient (default value = 0.10)
+K1 - k1 variable (default value = 0.75)
+K2 - k2 variable (default value = 8.0)
+SORT - Sorting method for the non-parametric model (Def: fold change)
+RAND - Sampling method for the parametric model (Def: empirical dist.)
+</pre>
+			</div>
+			
+			<p class="p4">
+				<span>The two parameters, <code>SIG</code> and <code>REG</code>, are used to define threshold values for defining the borders of the region of interest (ROI) for proteins in the in the experimental data. Proteins that end up in the ROI have much more contribution towards the enrichment score of a pathway. 
+				</span>
+			</p>
+		
+			<p class="p5">
+				<span><code>ALPHA</code> coefficients are used for weighing of three functions in a linear combination, these functions are explained in detail in the supplementary material to the original article. It is important to note that <code>ALPHA</code> coefficients have to sum up to <code>1.0</code>, in order to normalize the total effect of the weights, hence valid values for these coefficients are decimal values in the range of <code>(0,1)</code>.
+				</span>
+			</p>
+
+			<p class="p6">
+				<span>The last two parameters <code>K1</code> and <code>K2</code> are used for fine-tune non-linearity of the first and third function, respectively. Note that the non-linearity property is optional, both values can be set to <code>1.0</code> to eliminate non-linearity otherwise positive rational values are expected for both values, given in decimal notation. 
+				</span>
+			</p>
+
+			
+		</div>
+	
+
+	</div>
+
+	<div id="footer">
+		<p>
+			<span><b>Links:</b> &nbsp;&nbsp;&nbsp;</span>
+			<a href="http://www.immun.lth.se/" target="_blank" title="Department of Immunotechnology, Lund University">Dept. Immunotechnology</a> &nbsp; 
+			<a href="http://www.pathwaycommons.org/pc/" target="_blank" title="Pathway Commons Database">Pathway Commons</a> &nbsp; 
+			<a href="http://www.uniprot.org/" target="_blank" title="UniProt Protein Database">Uniprot</a> &nbsp;
+			<a href="http://www.kegg.jp/kegg/kegg2.html" target="_blank" title="Kyoto Encyclopedia of Genes and Genomes">Kegg</a> &nbsp;
+		</p>
+		<SCRIPT type="text/javascript"> 
+			document.write('<p style=\"text-transform:capitalize;font-size:0.85em;\">');
+				document.write ('Last updated: ', new Date(document.lastModified).toLocaleString());
+				document.write('</p>');
+		</SCRIPT> 
+	</div>
+
+
+</div>
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<div id="extraDiv1"><span></span></div>
+<div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+</body>
+</html>

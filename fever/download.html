@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+		  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		
+		<title>FEvER: Functional Evaluation of Expression Regulation</title><style type="text/css" title="currentStyle" media="screen">
+			@import "style.css";
+		</style>
+		<link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico" />	
+		<link href='http://fonts.googleapis.com/css?family=Habibi&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+			
+		</head>
+		<body id="body">
+			
+			<div id="container">
+				<div id="intro">
+					<div id="pageHeader">
+						<span></span>
+					</div>
+					
+					<div id="navBar">
+						<ul>
+							<li><a href="index-2.html" title="start">home</a></li>
+							<li><a href="method.html" title="the workflow and models used">method</a></li>
+							<li><a href="howto.html" title="details of the system, instructions for a sample run">how-to</a></li>
+							<li><a href="download.html" title="the listing of available downloads">download</a></li>
+							<li><a href="dev.html" title="a (speculative) roadmap of expected development">Development</a></li>
+						</ul>
+					</div> 
+					
+					<div id="preamble">
+						<p class="p1"><span>A systematic and thorough method for identifying the significant links in biochemical pathways with high sensitivity.</span></p>
+					</div>
+	</div>
+
+	<div id="supportingText">
+		<div id="explanation">
+			<h3><span>Latest release</span></h3>
+			<p class="p1">
+				<span>
+					FEvER software is freely available and is packaged as <code>JAR</code> file containing all the libraries used. It's very straight forward to use the software, assuming that <code>Java Runtime Environment (JRE)</code> is installed on your system. You can check if <code>JRE</code> is installed and running properly on your system by visiting the following <a href="http://www.java.com/en/download/installed.jsp" target="_blank">test</a> on Java homepage. Note that the page checks your system for the most current version available; as long as you have Java version 5+ running the FEvER software shouldn't be a problem.
+				</span>
+			</p>
+
+			<p class="p2"><span>
+				<table id="tabledef">
+					<TR><TH>Relase name</TH><TH>Release Date</TH><TH>Download file</TH></TR>
+					<TR><TD>FEvER-0.6.2 - <i>Rev.94</i></TD><TD>Mar 26, 2012</TD><TD><a href="https://github.com/ComputationalProteomics/computationalproteomics.github.io/releases/download/fever-assets/fever-0.6.2-r94.jar">download</a></TD></TR>
+					<TR><TD>FEvER-0.5.4 - <i>Rev.73</i></TD><TD>Dec 16, 2011</TD><TD><a href="https://github.com/ComputationalProteomics/computationalproteomics.github.io/releases/download/fever-assets/fever-0.5.4-r73.jar">download</a></TD></TR>
+					<!--<TR class="alt"><TD><i>Prothermometer-0.1.3</i> with libraries</TD><TD>Jan 17, 2011</TD><TD><a href="dist/fever-cli.jar">download</a></TD></TR>	-->
+				</table>
+
+			</span></p>
+
+			<h3><span><a name="instructions">Instructions</a></span></h3>
+			<p class="p3"><span>Once you have confirmed that you have the required Java version installed and running properly on your system, you can run the software by double clicking on the <code>JAR</code> file and filling the parameters. Alternatively you can run the <code>java -jar &lt;jar_file&gt; &lt;parameter_file&gt;</code> command on a terminal/command prompt; where <code>&lt;jar_file&gt;</code> refers to the name  of the <code>JAR</code> file you have downloaded and <code>&lt;parameter_file&gt;</code> refers to a text file which holds the parameters to be used by the software. <br><br>See example below:</span></p>
+			
+			<div id="codebox"><pre>> java -jar fever-0.5.4-r73.jar param.txt</pre></div>
+			
+			<p class="p4">
+				<span>Note that FEvER uses a significant amount of memory and processor power. It is important to keep in mind that if the dataset to be analyzed is rather large you will probably need to give extra memory to Java Virtual Machine. This is typically done with a command-line parameter, see example below where the JVM is given 2GB heap maximal heap space.</span>
+			</p>
+			
+			<div id="codebox"><pre>> java -Xmx2g -jar fever-0.5.4-r73.jar</pre></div>
+
+		</div>
+	
+
+	</div>
+	<div id="footer">
+		<p>
+			<span><b>Links:</b> &nbsp;&nbsp;&nbsp;</span>
+			<a href="http://www.immun.lth.se/" target="_blank" title="Department of Immunotechnology, Lund University">Dept. Immunotechnology</a> &nbsp; 
+			<a href="http://www.pathwaycommons.org/pc/" target="_blank" title="Pathway Commons Database">Pathway Commons</a> &nbsp; 
+			<a href="http://www.uniprot.org/" target="_blank" title="UniProt Protein Database">Uniprot</a> &nbsp;
+			<a href="http://www.kegg.jp/kegg/kegg2.html" target="_blank" title="Kyoto Encyclopedia of Genes and Genomes">Kegg</a> &nbsp;
+		</p>
+		<SCRIPT type="text/javascript"> 
+			document.write('<p style=\"text-transform:capitalize;font-size:0.85em;\">');
+				document.write ('Last updated: ', new Date(document.lastModified).toLocaleString());
+				document.write('</p>');
+		</SCRIPT> 
+	</div>
+
+
+</div>
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<div id="extraDiv1"><span></span></div>
+<div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+</body>
+</html>
